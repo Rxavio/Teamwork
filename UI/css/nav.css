@@ -1,16 +1,15 @@
 
 :root {
-    --primaryColor: #f09d51;
-      --mainWhite: #ffffff;
-      --mainBlack: #000000;
-      --mainGrey: #ececec;
-      --color1:#666666;
-      --color2:#999999;
-      --mainSpacing: 0.1rem;
-      --mainTransition: all .5s ease;
-      --color-primary: #263238;
+    --primaryColor: rgb(40, 106, 247);
+    --mainWhite: #ffffff;
+    --mainGrey: #ececec;
+    --mainBlack: #000000;
+    --color-primary: #263238;
+    --color-secondary: darkgrey;
+  
+    --mainSpacing: 0.1rem;
+    --mainTransition: all .5s ease;
     }
-
 
 .nav {
     border-bottom: 1px solid #EAEAEB;
@@ -42,6 +41,11 @@ span {
     margin: 0 20px;
     line-height: 70px;
    
+}
+span img{
+    width: 30%;
+    height: 60px;
+    float: left;  
 }
 
 

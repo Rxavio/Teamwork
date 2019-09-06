@@ -1,14 +1,21 @@
 
 :root {
-    --primaryColor: #f09d51;
-      --mainWhite: #ffffff;
-      --mainBlack: #000000;
-      --mainGrey: #ececec;
-      --color1:#666666;
-      --color2:#999999;
-      --mainSpacing: 0.1rem;
-      --mainTransition: all .5s ease;
+    --primaryColor: rgb(40, 106, 247);
+    --mainWhite: #ffffff;
+    --mainGrey: #ececec;
+    --color-primary: #263238;
+    --color-secondary: darkgrey;
+  
+    --mainSpacing: 0.1rem;
+    --mainTransition: all .5s ease;
     }
+  
+
+    a{
+        text-decoration: none;
+        color: var(--color-primary);
+      
+      }
   
 
 .create-page{

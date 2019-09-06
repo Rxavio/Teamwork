@@ -1,18 +1,18 @@
-
 :root {
-    --primaryColor: #f09d51;
-      --mainWhite: #ffffff;
-      --mainBlack: #000000;
-      --mainGrey: #ececec;
-      --color1:#666666;
-      --color2:#999999;
-      --mainSpacing: 0.1rem;
-      --mainTransition: all .5s ease;
-      
+  --primaryColor: rgb(40, 106, 247);
+    --mainWhite: #ffffff;
+    --mainBlack: #000000;
+    --mainGrey: #ececec;
+    --color1:#666666;
+    --color2:#999999;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all .5s ease;
 
-
-    }
-
+    --color-primary: #263238;
+    --color-secondary: darkgrey;
+    --main-text-color: #fff;
+    --main-content-bg: #fafafa;
+  }
 
 #about-us{
     background-color: #fff;
@@ -95,11 +95,12 @@
 
   .container{
     min-height: calc(90vh - 40px);
-   background: url("../assets/images/banner 3.jpg") center/cover no-repeat;
+   background: url("../assets/images/banner 2.jpg") center/cover no-repeat;
    display: flex;
    align-items: center;
    justify-content: center;
    opacity: 0.7;
+  
  }
   
 
