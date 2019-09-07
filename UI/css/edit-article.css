@@ -11,14 +11,14 @@
   }
 
 
-.comment-article-page{
+.edit-article-page{
   width: 80%;
   height:auto;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
-.comment-form{
+.edit-form{
   position: relative;
   z-index: 1;
   background: rgb(252, 250, 250);
@@ -31,7 +31,7 @@
   border: 1px solid #e1e1e1;
 
 }
-.comment-form input{
+.edit-form input{
   letter-spacing: var(--mainSpacing); 
   background: var(--mainWhite);
   width: 100%;
@@ -44,7 +44,7 @@
   border-radius: 10px;
  
 }
-.comment-form button{
+.edit-form button{
   letter-spacing: var(--mainSpacing); 
   background: var(--primaryColor);
   color: var(--mainWhite);
@@ -55,6 +55,8 @@
   border-radius: 10px;
  
 }
+
+
 
 
 
