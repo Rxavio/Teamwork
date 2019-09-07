@@ -150,9 +150,25 @@ a{
   outline: 0;
   border: 1px solid #e1e1e1;
   border-radius: 10px;
-  margin-right: 90%;
+  
+
 
 }
+
+.comment .btn-delete{
+  letter-spacing: var(--mainSpacing); 
+  background: var(--color-primary);
+  color: var(--mainWhite);
+  width: 20%;
+  padding: 12px;
+  font-size: 14px;
+  outline: 0;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  margin-left: 50%;
+
+}
+
 
 
 
