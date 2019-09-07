@@ -69,14 +69,8 @@
 
 }
 .login-form button:hover,.form.button :active{
-   /* background: #43A047;*/
    color: #FFFFFF;
 }
-
-
-
-
-
 
 .login-form img{
   height: 90px;
