@@ -24,7 +24,6 @@ Goal of Application this application is to facilitate more interaction between c
 
 
 
-
-# **Author**
-
+- Author:
 ## **Xavier Rucahobatinya**
+
