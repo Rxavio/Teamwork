@@ -14,7 +14,7 @@ Goal of Application this application is to facilitate more interaction between c
 7. Employees can view all articles showing the most recently posted articles first.
 8. Employees can view a specific article.
 
-### Links.
+### Links
 
 ### 1.Gh-pages
 
