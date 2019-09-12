@@ -3,7 +3,7 @@
 Teamwork is an internal social network for organizations’ employees.
 Goal of Application this application is to facilitate more interaction between colleagues and facilitate team bonding.
 
-## Required Features.
+## Required Features
 
 1. Employees can create their own user account.
 2. Employees can sign in.
@@ -16,11 +16,12 @@ Goal of Application this application is to facilitate more interaction between c
 
 ### Links.
 
-### 1.Gh-pages.
+### 1.Gh-pages
+
+https://xavioo.github.io/Teamwork/UI/index.html
 
 
-
-### 2.Pivotal Tracker.
+### 2.Pivotal Tracker
 
 https://www.pivotaltracker.com/n/projects/2395950
 
