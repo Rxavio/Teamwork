@@ -33,8 +33,4 @@ https://www.pivotaltracker.com/n/projects/2395950
 
 
 
-- Author:
-## **Xavier Rucahobatinya**
-
-
 
