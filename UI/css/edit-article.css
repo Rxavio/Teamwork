@@ -5,7 +5,6 @@
   --mainBlack: #000000;
   --color-primary: #263238;
   --color-secondary: darkgrey;
-
   --mainSpacing: 0.1rem;
   --mainTransition: all .5s ease;
   }
@@ -27,8 +26,9 @@
   padding: 45px;
   text-align: center;
   box-sizing: border-box;	
-  float:left;
+ float:left;
   border: 1px solid #e1e1e1;
+  border-radius: 10px;
 
 }
 .edit-form input{
@@ -38,7 +38,6 @@
   margin: 0 0 20px;
   padding: 12px;
   box-sizing: border-box;
-  font-size: 14px;
   border: 1px solid #e1e1e1;
   outline: 0;
   border-radius: 10px;
@@ -46,19 +45,13 @@
 }
 .edit-form button{
   letter-spacing: var(--mainSpacing); 
-  background: var(--primaryColor);
   color: var(--mainWhite);
   width: 20%;
   outline: 0;
   padding: 12px;
-  font-size: 14px;
   border-radius: 10px;
  
 }
-
-
-
-
 
 a{
   text-decoration: none;
@@ -74,23 +67,15 @@ a{
   padding: 12px;
   border: 1px solid #e1e1e1;
   outline: 0; 
-  
- 
 }
-
-
 .info-card h4 {
-  font-size: 16px;
   text-transform: uppercase;
   color: var(--primaryColor);
   border-bottom: 1px solid #e1e1e1;
   letter-spacing: var(--mainSpacing); 
- 
-
 }
 .info-card p{
     text-align: left;
-    font-size: 17px;
     letter-spacing: var(--mainSpacing); 
 }
 
@@ -98,6 +83,7 @@ a{
   color: var(--color-secondary);
   margin-left: 75%;
   margin-bottom: 0px;
+  margin-top:10px;
   letter-spacing: var(--mainSpacing); 
 }
 
@@ -107,21 +93,12 @@ a{
 
 }
 
-
-
-
-
-
-
-
-
 .comment{
   background: var(--mainWhite);
   width: 100%;
   height: auto;
   margin-top: 0px;
   padding: 12px;
-  /*border: 1px solid #e1e1e1;*/
   outline: 0;
   border-bottom: 1px solid #e1e1e1;
 	border-left: 1px solid #e1e1e1;
@@ -133,7 +110,6 @@ a{
   letter-spacing: var(--mainSpacing); 
   background: var(--mainWhite);
   width: 100%;
-  font-size: 14px;
   border: 1px solid #e1e1e1;
   outline: 0;
   border-radius: 10px;
@@ -142,32 +118,67 @@ a{
 
 .comment button{
   letter-spacing: var(--mainSpacing); 
-  background: var(--primaryColor);
   color: var(--mainWhite);
-  width: 20%;
-  padding: 12px;
-  font-size: 14px;
+  width: 15%;
   outline: 0;
-  border: 1px solid #e1e1e1;
-  border-radius: 10px;
-  
-
+  border:none;
+  background: var(--mainWhite);
 
 }
 
 .comment .btn-delete{
   letter-spacing: var(--mainSpacing); 
-  background: var(--color-primary);
   color: var(--mainWhite);
-  width: 20%;
-  padding: 12px;
-  font-size: 14px;
-  outline: 0;
-  border: 1px solid #e1e1e1;
-  border-radius: 10px;
-  margin-left: 50%;
+  width: 15%;
+  outline: 0; 
 
 }
+.comment img{
+  width:30px;
+  height: 30px;
+  opacity: 0.5;
+}
+.comment :hover{
+  opacity: 1; 
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1200px){
+
+  .edit-article-page{
+    width:100%;
+    margin-bottom: 0px;
+    padding: 10px;
+  }
+  .edit-form{
+    width: 100%;
+    padding: 10px;
+  }
+  .comment button{
+    width:20%;
+    margin: auto;
+  }
+  
+  .comment .btn-delete{
+    width:20%;
+    margin: auto;
+  }
+
+  .info-card{
+    width:100%
+  }
+  .info-card .author {
+    margin: auto; 
+    
+  }
+  
+  .info-card .author .date{
+  margin: auto;
+  
+  }
+   
+
+}
+
 
 
 

@@ -10,13 +10,13 @@
   }
 
   .container{
-    min-height: calc(90vh - 40px);
-   background: url("../assets/images/banner 2.jpg") center/cover no-repeat;
+   min-height: calc(100vh - 50px);
+   background: url("../assets/images/banner.jpg") center/cover no-repeat;
    display: flex;
    align-items: center;
    justify-content: center;
    opacity: 0.7;
-  
+   border-bottom: 1px solid var(--mainBlack);
  }
  .banner {
   width: 85%;
@@ -45,9 +45,7 @@
     width:100%;
     margin-bottom: 0px;
   }
+
 }
-
-
-  
 
 

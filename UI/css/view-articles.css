@@ -9,8 +9,6 @@
   --mainSpacing: 0.1rem;
   --mainTransition: all .5s ease;
   }
-
-
 .shared-article-page{
   width: 80%;
   height:auto;
@@ -27,8 +25,9 @@
   padding: 45px;
   text-align: center;
   box-sizing: border-box;	
- float:left;
+  float:left;
   border: 1px solid #e1e1e1;
+  border-radius: 10px;
 
 }
 .shared-form input{
@@ -38,7 +37,6 @@
   margin: 0 0 20px;
   padding: 12px;
   box-sizing: border-box;
-  font-size: 14px;
   border: 1px solid #e1e1e1;
   outline: 0;
   border-radius: 10px;
@@ -52,20 +50,13 @@
   padding: 10px;
   color: var(--mainWhite);
   letter-spacing: var(--mainSpacing); 
-  font-size: 14px;
   cursor: pointer;
   border-radius: 10px;
   margin: 0 0 20px;
 }
-
-
-
-
-
 a{
   text-decoration: none;
-  color: black;
-
+  color: var(--mainBlack);
 }
 
 .info-card  {
@@ -78,23 +69,17 @@ a{
   padding: 10px 10px;
   background: var(--mainWhite);
   margin-top: 10px;
-  
- 
+
 }
-
-
 .info-card h4 {
-  font-size: 16px;
   text-transform: uppercase;
   color: var(--primaryColor);
   border-bottom: 1px solid #e1e1e1;
   letter-spacing: var(--mainSpacing); 
- 
 
 }
 .info-card p{
     text-align: left;
-    font-size: 17px;
     letter-spacing: var(--mainSpacing); 
 }
 
@@ -102,6 +87,7 @@ a{
   color: var(--color-secondary);
   margin-left: 75%;
   margin-bottom: 0px;
+  margin-top:10px;
   letter-spacing: var(--mainSpacing); 
 }
 
@@ -110,9 +96,33 @@ a{
   letter-spacing: var(--mainSpacing); 
 
 }
+@media only screen and (min-width: 300px) and (max-width: 1200px){
+  .shared-article-page{
+    width:100%;
+    margin-bottom: 0px;
+    padding: 10px
+  }
+  .shared-form{
+    width: 100%;
+    padding: 10px
+  }
+  .shared-form button{
+    width:100%;
+  }
+  .info-card{
+    width:100%
+  }
+  .info-card .author {
+    margin: auto; 
+    
+  }
+  
+  .info-card .author .date{
+  margin: auto;
+  
+  }
 
-
-
+}
 
 
 

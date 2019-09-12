@@ -5,33 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TEAMWORK</title> 
+  <link href='https://fonts.googleapis.com/css?family=Crimson Text' rel='stylesheet'>
 	<link rel="stylesheet" href="../css/comment.css"/>
 	<link rel="stylesheet" href="../css/nav.css"/>
-    <link rel="stylesheet" href="../css/footer.css"/>
+   <link rel="stylesheet" href="../css/footer.css"/>
         
      
 </head>
 
 <body>
-
-        <div class="nav">
-                <label for="toggle">&#9776;</label>
-                <input type="checkbox" id="toggle"/>
-        
-                
-                <div class="menu">
-                    
-                    <a href="../index.html"><span>	<img src="../assets/images/team.png"></span></a>
-        
-                    <a href="./write-article.html">New Article</a>
-                    <a href="./view-articles.html">Shared Articles</a>
-                    <a href="./login.html">Logout</a>
-                    
-                    
+            <nav>
+                <div class="hamburger">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
                 </div>
-            </div>
-
-				
+          
+                 <div class="logo">
+                <h1><a href="./home.html"><img src="../assets/images/team.png"></a></h1>
+                </div>
+    
+                <ul class="nav-links">
+                  <li><a href="./write-article.html">New Article</a></li>
+                  <li><a href="./view-articles.html">Shared Articles</a></li>
+                  <li><a href="./login.html">Logout</a><li>
+                </ul>
+              </nav>			
     <!-- comment an article-->
    
 
@@ -53,12 +52,12 @@ Teamwork is one of the most important aspects of the modern workplace. However, 
 </div>
 
 <div class="comment">
-<form action="#" id="comment-form">
+<form action="#" id="comment-action">
 <input type="text"value="Interested Article">
 <input type="text"value="Interested Article">
 <input type="text"placeholder="write your comment..." name="comment" id="comment">
 <button type="submit" id="btn-comment">comment</button>     
- </form>
+</form>
 </div>
 
 
@@ -76,7 +75,7 @@ Teamwork is one of the most important aspects of the modern workplace. However, 
 	
 	</footer>
 <!--footer end-->  
-
+<script src="../js/script.js"></script>
 </body>
 </html>
   

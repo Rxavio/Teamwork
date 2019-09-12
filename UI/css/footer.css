@@ -1,33 +1,25 @@
-
-
 :root {
-    --primaryColor: rgb(40, 106, 247);
-      --mainWhite: #ffffff;
-      --mainBlack: #000000;
-      --mainGrey: #ececec;
-      --color1:#666666;
-      --color2:#999999;
-      --mainSpacing: 0.1rem;
-      --mainTransition: all .5s ease;
-
-      --color-primary: #263238;
-      --color-secondary: darkgrey;
-      --main-text-color: #fff;
-      --main-content-bg: #fafafa;
-    }
-  /*footer*/
+  --primaryColor: rgb(40, 106, 247);
+  --mainWhite: #ffffff;
+  --mainGrey: #ececec;
+  --mainBlack: #000000;
+  --color-primary: #263238;
+  --color-secondary: darkgrey;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all .5s ease;
+  }
+  
   .mainfooter{
     width: 100%;
-    height: 80px;
+    height: 100px;
     float: left;
     background: var(--color-primary);
-  
   }
   .mainfooter p{
     text-align: center;
     color: var(--mainWhite);
-    font-size: 18px;
-    opacity: 0.6;
-    margin-top: 30px;
+    opacity: 0.9;
+    margin-top: 40px;
   }
+ 
  
