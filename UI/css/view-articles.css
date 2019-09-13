@@ -96,6 +96,18 @@ a{
   letter-spacing: var(--mainSpacing); 
 
 }
+.info-card img{
+  margin-left: 20px;
+  width:16px;
+  height: 16px;
+  opacity: 0.6;
+  float: left;
+  margin-top: -13px;
+}
+
+.info-card img:hover{
+  opacity: 1;
+}
 @media only screen and (min-width: 300px) and (max-width: 1200px){
   .shared-article-page{
     width:100%;

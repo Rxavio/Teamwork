@@ -29,7 +29,6 @@ nav {
 }
  .logo {
     position: absolute;
-    cursor: pointer;
     float: left;
     margin-left: 50px;
   }
@@ -38,11 +37,7 @@ nav {
   height: 60px;
   float: left; 
   }
-  .logo:hover{
-    opacity: 0.5;
-  }
-  
-
+ 
 .nav-links {
   display: flex;
   list-style: none;
