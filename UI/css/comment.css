@@ -122,7 +122,7 @@ a{
   border: 1px solid #e1e1e1;
   outline: 0;
   border-radius: 10px;
- 
+ margin-top: 20px;
 }
 
 .comment button{
@@ -132,7 +132,44 @@ a{
   outline: 0;
   border:none;
   background: var(--primaryColor);
+}
+.comment-posted{
+  letter-spacing: var(--mainSpacing); 
+  background: var(--mainWhite);
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+ display: block;
+}
+.comment-posted .comment-author{
+float: left;
+text-align: left;
+margin-right: 5px;
+color: var(--primaryColor);
+}
+.comment-posted p{
+  float: left;
+  text-align: left;
+}
 
+.comment-posted p img{
+  width:14px;
+  height: 14px;
+  opacity: 0.6;
+}
+.comment-posted p :hover{
+  opacity: 1; 
+}
+.info-card img{
+  margin-left: 20px;
+  width:14px;
+  height: 14px;
+  opacity: 0.6;
+  float: left;
+  margin-top: -13px;
+}
+.info-card img:hover{
+  opacity: 1;
 }
 @media only screen and (min-width: 300px) and (max-width: 1200px){
   .comment-article-page{
@@ -157,7 +194,7 @@ a{
   }
   
   .info-card .author .date{
-  margin: auto;
+   margin: auto;
   
   }
 
