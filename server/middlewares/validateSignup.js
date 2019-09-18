@@ -4,7 +4,7 @@ module.exports = function validateUp(req) {
   const schema = {
     firstName: Joi.string().required().min(4).max(50),
     lastName: Joi.string().required().min(4).max(50),
-    email: Joi.string().email().required(),
+    email: Joi.string().email().regex(/^\S+@\S+\.\S+$/).required(),
     password: Joi.string().required().min(6).max(50),
     gender: Joi.string().required().min(1).max(10),
     jobRole: Joi.string().required().min(4).max(50),
