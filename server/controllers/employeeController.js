@@ -19,7 +19,7 @@ const signUp = async (req, res) => {
   const existUser = employees.find((user) => user.email === req.body.email);
   if (existUser) return res.status(401).send('User already registered.');
   const {
-    firstName, lastName, email, password, gender, jobRole, department, address, isAdmin,
+    firstName, lastName, email, password, gender, jobRole, department, address,
   } = req.body;
 
   const addUser = {
@@ -32,7 +32,7 @@ const signUp = async (req, res) => {
     jobRole,
     department,
     address,
-    isAdmin,
+    isAdmin: false,
   };
   const salt = await bcrypt.genSalt(10);
   addUser.password = await bcrypt.hash(addUser.password, salt);
@@ -63,11 +63,12 @@ const signIn = async (req, res) => {
   const comparePass = await bcrypt.compare(req.body.password, checkUser.password);
   if (!comparePass) return res.status(400).send('Password is incorrect');
 
-  const token = jwt.sign({ id: checkUser.id, isAdmin: checkUser.isAdmin }, process.env.JWT_SECRET);
+  const token = jwt.sign({ id: checkUser.id, isAdmin: checkUser.isAdmin }, process.env.JWT_KEY);
   return res.json({
     status: 200,
     message: 'User is successfully logged in',
-    token,
+    user_token: token,
+
   });
 };
 
