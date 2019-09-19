@@ -79,4 +79,20 @@ const deleteArticle = async (req, res) => {
   }
 };
 
-export default { createArticle, deleteArticle };
+const viewArticles = async (req, res) => {
+  const data = [];
+  let j = 0;
+  for (let i = articles.length - 1; i >= 0; i -= 1) {
+    data[j] = articles[i];
+    j += 1;
+  }
+  response.response(
+    res,
+    200,
+    'success',
+    data,
+    false,
+  );
+};
+
+export default { createArticle, deleteArticle, viewArticles };
