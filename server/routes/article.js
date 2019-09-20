@@ -6,5 +6,6 @@ const router = express.Router();
 router.post('/article', userToken, articleController.createArticle);
 router.delete('/articles/:id', userToken, articleController.deleteArticle);
 router.get('/feeds', userToken, articleController.viewArticles);
+router.patch('/articles/:id', userToken, articleController.editArticles);
 
 export default router;
