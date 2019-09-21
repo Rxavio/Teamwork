@@ -90,7 +90,8 @@
 .step{
     width: 99%;
     margin: auto;
-    margin-bottom: 10px;  
+    margin-bottom: 10px; 
+    height: auto; 
 }
 
 }
