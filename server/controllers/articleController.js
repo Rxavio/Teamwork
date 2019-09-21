@@ -1,9 +1,12 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable consistent-return */
 import moment from 'moment';
+import _ from 'lodash';
 import articles from '../models/article-data';
 import employees from '../models/employee-data';
+import comments from '../models/comment-data';
 import validateArticle from '../middlewares/validateArticle';
+import validateComment from '../middlewares/commentValidate';
 import response from '../helpers/response';
 
 const createArticle = async (req, res) => {
@@ -43,6 +46,7 @@ const createArticle = async (req, res) => {
       authorName,
     };
     articles.push(newArticle);
+    // eslint-disable-next-line no-shadow
     const { authorId: _, ...omitData } = newArticle;
     return res.status(201).json({
       status: 201,
@@ -59,7 +63,7 @@ const deleteArticle = async (req, res) => {
     response.response(
       res,
       401,
-      'Only Article Author allowed to delete it! ',
+      'Only Article Author allowed to delete it!',
       true,
     );
   } else {
@@ -90,19 +94,12 @@ const viewArticles = async (req, res) => {
       true,
     );
   } else {
-    const data = [];
-    let j = 0;
-    for (let i = articles.length - 1; i >= 0; i -= 1) {
-      data[j] = articles[i];
-      j += 1;
-    }
-    response.response(
-      res,
-      200,
-      'success',
-      data,
-      false,
-    );
+    const sortArticles = _.sortBy(articles).reverse();
+    return res.status(200).json({
+      status: 200,
+      message: 'success',
+      data: sortArticles,
+    });
   }
 };
 
@@ -128,7 +125,7 @@ const editArticles = async (req, res) => {
     );
   } else {
     const { id } = req.params;
-    const article = articles.find((editArtice) => editArtice.articleId == id);
+    const article = articles.find((editArticle) => editArticle.articleId == id);
     if (article) {
       const UpdateData = Object.keys(req.body);
       UpdateData.forEach((data) => {
@@ -144,7 +141,58 @@ const editArticles = async (req, res) => {
     }
   }
 };
+const commentOnArticle = async (req, res) => {
+  const { error } = validateComment(req.body);
+  if (error) {
+    return response.response(
+      res,
+      422,
+      422,
+      `${error.details[0].message}`,
+      true,
+    );
+  }
+  const { isAdmin } = req.user;
+  if (isAdmin) {
+    response.response(
+      res,
+      401,
+      'Oops,Only users allowed!',
+      true,
+    );
+  } else {
+    const { id: userId } = req.user;
+    const checkUser = employees.find((user) => user.id === userId);
+    if (!checkUser) return res.status(400).send('Oops,you must provide your credentails');
+    const { firstName, lastName } = checkUser;
+    const { id } = req.params;
+    const findArticle = articles.find((checkArticle) => checkArticle.articleId == id);
+    if (!findArticle) {
+      return res.status(404).json({
+        status: 404,
+        error: 'Article not found.',
+      });
+    }
+    const { title, article } = findArticle;
+    const { comment } = req.body;
+    const commentBy = `${firstName} ${lastName}`;
+    const addComment = {
+      commentId: comments.length + 1,
+      createdOn: moment().format(),
+      title,
+      article,
+      comment,
+      commentBy,
+    };
+    comments.push(addComment);
+    return res.status(201).json({
+      status: 201,
+      message: 'relevant-success-message',
+      data: addComment,
+    });
+  }
+};
 
 export default {
-  createArticle, deleteArticle, viewArticles, editArticles,
+  createArticle, deleteArticle, viewArticles, editArticles, commentOnArticle,
 };
