@@ -131,7 +131,10 @@ a{
   
   .info-card .author .date{
   margin: auto;
-  
+  text-align: center;
+  }
+  .info-card img{
+   display: none;
   }
 
 }

@@ -201,6 +201,9 @@ color: var(--primaryColor);
   .comment{
     width: auto;
   }
+  .info-card img{
+    display: none;
+  }
   
 
 }
