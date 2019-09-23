@@ -14,6 +14,61 @@ Goal of Application this application is to facilitate more interaction between c
 7. Employees can view all articles showing the most recently posted articles first.
 8. Employees can view a specific article.
 
+
+
+
+# **Technonlogies**
+
+- **Express JS** - API development framework
+
+- **Node** - run time environment for JavaScript
+- **Mocha and Chai** - for testing
+- **Eslint** - code analysis tool for identifying problematic patterns found in JavaScript code
+- **Babel JS** - JavaScript compiler (**ES6** to **ES5**)
+
+# **Requirements and Installation steps**
+
+## **You need the following to be able to run the application**
+
+[Node](https://nodejs.org/en/download/) a runtime environment for JavaScript
+
+[Postman](https://www.getpostman.com/downloads/) to test the Api endpoints
+
+[Visual studio code](https://code.visualstudio.com/download) for editing and running the app
+
+## **Clone the project**
+
+    - git clone https://github.com/xavioo/Teamwork.git
+    - cd /Teamwork
+    - npm install (to install required dependencies)
+  
+## **Testing**
+
+    - npm test
+
+## **Start The Application**
+
+     - npm start
+
+
+## **API endpoints**
+
+`- POST /auth/signup - Employees can create their own user account`
+
+`- POST /auth/signin - Employees can sign in`
+
+`- POST /articles - Employees can write and/or share articles`
+
+`- PATCH /articles/<articleId> - Employees can edit their articles`
+
+`- DELETE /articles/<articleId> - Employees can delete their articles`
+
+`- POST /articles/<articleId>/comments - Employees can comment on other colleagues' article post.`
+
+`- GET /feeds - Employees can view all articles, showing the most recently posted articles first.`
+
+`- GET /articles/<articleId> - Employees can view a specific article.`
+
 ### Links
 
 ### 1.Gh-pages
@@ -29,8 +84,7 @@ https://www.pivotaltracker.com/n/projects/2395950
 
 
 # **Author**
-
-## **Xavier Rucahobatinya**
+Xavier Rucahobatinya
 
 
 
