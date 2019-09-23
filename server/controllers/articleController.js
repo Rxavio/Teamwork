@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable eqeqeq */
 /* eslint-disable consistent-return */
 import moment from 'moment';
@@ -25,13 +26,18 @@ const createArticle = async (req, res) => {
     response.response(
       res,
       401,
+      401,
       'Only users allowed to create an Article',
-      true,
     );
   } else {
     const { id } = req.user;
     const checkUser = employees.find((user) => user.id === id);
-    if (!checkUser) return res.status(400).send('Oops,you must provide your credentails');
+    if (!checkUser) {
+      return res.status(401).json({
+        status: 401,
+        message: 'Oops,you must provide your credentails',
+      });
+    }
     const { id: authorId, firstName, lastName } = checkUser;
     const {
       title, article,
@@ -46,40 +52,48 @@ const createArticle = async (req, res) => {
       authorName,
     };
     articles.push(newArticle);
-    // eslint-disable-next-line no-shadow
-    const { authorId: _, ...omitData } = newArticle;
-    return res.status(201).json({
-      status: 201,
-      message: 'article successfully created',
-      data: { ...omitData },
-      // data: newArticle,
-    });
+    if (newArticle) {
+      const result = { createdOn: moment().format(), title, article };
+      return res.status(201).json({
+        status: 201,
+        message: 'article successfully created',
+        data: result,
+      });
+    }
   }
 };
-
 const deleteArticle = async (req, res) => {
   const { isAdmin } = req.user;
   if (isAdmin) {
     response.response(
       res,
       401,
+      401,
       'Only Article Author allowed to delete it!',
-      true,
     );
   } else {
     const { id } = req.params;
-    const article = articles.findIndex((delArticle) => delArticle.articleId === parseInt(id, 10));
-    if (article !== -1) {
-      articles.splice(article, 1);
-      res.status(200).json({
-        status: 200,
-        message: 'article successfully Deleted',
-      });
-    } else {
+    const { id: ownerId } = req.user;
+    const checkArticle = articles.find((delArticle) => delArticle.articleId === parseInt(id, 10));
+    if (!checkArticle) {
       res.status(404).json({
         status: 404,
         message: 'article not found',
       });
+    } else {
+      const article = articles.findIndex((delArticle) => delArticle.articleId === parseInt(id, 10) && delArticle.authorId === ownerId);
+      if (article !== -1) {
+        articles.splice(article, 1);
+        res.status(200).json({
+          status: 200,
+          message: 'article successfully Deleted',
+        });
+      } else {
+        res.status(401).json({
+          status: 401,
+          message: 'Only Article Author allowed to delete it!',
+        });
+      }
     }
   }
 };
@@ -90,8 +104,8 @@ const viewArticles = async (req, res) => {
     response.response(
       res,
       401,
+      401,
       'Oops,Only users allowed!',
-      true,
     );
   } else {
     const sortArticles = _.sortBy(articles).reverse();
@@ -121,23 +135,38 @@ const editArticles = async (req, res) => {
       401,
       401,
       'Only Article Author allowed to edit it!',
-      true,
     );
   } else {
     const { id } = req.params;
-    const article = articles.find((editArticle) => editArticle.articleId == id);
-    if (article) {
-      const UpdateData = Object.keys(req.body);
-      UpdateData.forEach((data) => {
-        article[data] = req.body[data];
-      });
-      res.status(200).json({
-        status: 200,
-        message: 'article successfully Edited',
-        data: article,
+    const { title, article } = req.body;
+    const { id: ownerId } = req.user;
+    const upArticle = articles.find((editArticle) => editArticle.articleId == id);
+    if (!upArticle) {
+      res.status(404).json({
+        status: 404,
+        message: 'Article not found',
       });
     } else {
-      response.response(res, 404, 404, 'Article you want to edit Does not Exist');
+      const updateArticle = articles.find((editArticle) => editArticle.articleId == id && editArticle.authorId == ownerId);
+      if (!updateArticle) {
+        response.response(
+          res,
+          401,
+          401,
+          'Only Article Author allowed to edit it!',
+        );
+      } else {
+        const UpdateData = Object.keys(req.body);
+        UpdateData.forEach((data) => {
+          updateArticle[data] = req.body[data];
+        });
+        const result = { editedOn: moment().format(), title, article };
+        res.status(200).json({
+          status: 200,
+          message: 'article successfully Edited',
+          data: result,
+        });
+      }
     }
   }
 };
@@ -157,42 +186,86 @@ const commentOnArticle = async (req, res) => {
     response.response(
       res,
       401,
-      'Oops,Only users allowed!',
-      true,
+      401,
+      'Only users allowed to comment!',
     );
   } else {
     const { id: userId } = req.user;
-    const checkUser = employees.find((user) => user.id === userId);
-    if (!checkUser) return res.status(400).send('Oops,you must provide your credentails');
-    const { firstName, lastName } = checkUser;
     const { id } = req.params;
-    const findArticle = articles.find((checkArticle) => checkArticle.articleId == id);
-    if (!findArticle) {
-      return res.status(404).json({
+    const { comment } = req.body;
+    const existArticle = await articles.findIndex((findArticle) => findArticle.articleId === parseInt(id, 10));
+    if (existArticle !== -1) {
+      const { createdOn, title, article } = articles[existArticle];
+      const postComment = {
+        commentId: comments.length + 1,
+        articleId: parseInt(id, 10),
+        authorId: userId,
+        comment,
+      };
+
+      comments.push(postComment);
+      if (postComment) {
+        const result = {
+          createdOn, title, article, comment,
+        };
+        res.status(201).json({
+          status: 201,
+          message: 'Comment Added',
+          data: result,
+        });
+      }
+    } else {
+      res.status(404).json({
         status: 404,
-        error: 'Article not found.',
+        message: 'article Not Found ',
       });
     }
-    const { title, article } = findArticle;
-    const { comment } = req.body;
-    const commentBy = `${firstName} ${lastName}`;
-    const addComment = {
-      commentId: comments.length + 1,
-      createdOn: moment().format(),
-      title,
-      article,
-      comment,
-      commentBy,
-    };
-    comments.push(addComment);
-    return res.status(201).json({
-      status: 201,
-      message: 'relevant-success-message',
-      data: addComment,
-    });
   }
 };
 
+const specificArticle = async (req, res) => {
+  const { isAdmin } = req.user;
+  if (isAdmin) {
+    response.response(
+      res,
+      401,
+      401,
+      'Only users allowed!',
+    );
+  } else {
+    const { id } = req.params;
+
+    const existArticle = articles.filter(
+      (specfarticles) => specfarticles.articleId === parseInt(id, 10),
+    );
+    if (existArticle.length > 0) {
+      const fetchcomments = await comments.filter(
+        (article) => article.articleId === parseInt(id, 10),
+      );
+      const {
+        articleId, createdOn, title, article, authorId,
+      } = existArticle[0];
+      const data = {
+        articleId,
+        createdOn,
+        title,
+        article,
+        authorId,
+        comments: fetchcomments,
+      };
+      res.status(200).json({
+        status: 200,
+        message: 'success',
+        data,
+      });
+    } else {
+      res.status(404).json({
+        status: 404,
+        message: 'article Not Found',
+      });
+    }
+  }
+};
 export default {
-  createArticle, deleteArticle, viewArticles, editArticles, commentOnArticle,
+  createArticle, deleteArticle, viewArticles, editArticles, commentOnArticle, specificArticle,
 };
