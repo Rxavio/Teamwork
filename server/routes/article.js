@@ -9,5 +9,6 @@ router.patch('/articles/:id', userToken, articleController.editArticles);
 router.get('/feeds', userToken, articleController.viewArticles);
 router.post('/articles/:id/comments', userToken, articleController.commentOnArticle);
 router.get('/articles/:id', userToken, articleController.specificArticle);
+router.get('/articles', userToken, articleController.tagArticle);
 
 export default router;

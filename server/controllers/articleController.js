@@ -266,6 +266,21 @@ const specificArticle = async (req, res) => {
     }
   }
 };
+const tagArticle = async (req, res) => {
+  const { article } = req.query;
+  const filterArticles = articles.filter((item) => item.article.includes(`${article.trim()}`));
+  if (filterArticles.length > 0) {
+    res.status(200).json({
+      status: 200,
+      data: filterArticles,
+    });
+  } else {
+    res.status(404).json({
+      status: 404,
+      message: 'article Not Found',
+    });
+  }
+};
 export default {
-  createArticle, deleteArticle, viewArticles, editArticles, commentOnArticle, specificArticle,
+  createArticle, deleteArticle, viewArticles, editArticles, commentOnArticle, specificArticle,tagArticle
 };
