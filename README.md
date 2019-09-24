@@ -14,6 +14,12 @@ Goal of Application this application is to facilitate more interaction between c
 7. Employees can view all articles showing the most recently posted articles first.
 8. Employees can view a specific article.
 
+## Optional Features
+
+- Employees can view all articles that belong to a category (tag).
+- Employees can flag a comment, or article as inappropriate.
+- Admin can delete a comment, or article flagged as inappropriate.
+
 
 
 
@@ -68,6 +74,14 @@ Goal of Application this application is to facilitate more interaction between c
 `- GET /feeds - Employees can view all articles, showing the most recently posted articles first.`
 
 `- GET /articles/<articleId> - Employees can view a specific article.`
+`- GET /articles?articles=<:desired-category> - Employees can view all articles that belong to a category (tag).`
+
+`- POST /articles/flag/<articleId> - Employees can flag an article as inappropriate.`
+
+`- GET /flags - Admin can view all flags`
+
+`- DELETE /articles/<articleId> - Admin can delete an article flagged as inappropriate.`
+
 
 ### Links
 
