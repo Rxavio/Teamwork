@@ -33,7 +33,7 @@ const flagArticle = async (req, res) => {
   } else {
     const { id: userId } = req.user;
     const checkUser = employees.find((user) => user.id === userId);
-    if (!checkUser) return res.status(401).send('Oops,you must provide your credentails');
+    if (!checkUser) return res.status(401).send('you must provide your credentails');
     const { firstName, lastName } = checkUser;
     const { id } = req.params;
     const findArticle = articles.find((checkArticle) => checkArticle.articleId == id);
@@ -63,8 +63,32 @@ const flagArticle = async (req, res) => {
     });
   }
 };
+const deleteFlagArticle = async (req, res) => {
+  const { id } = req.params;
+  const checkFLag = flags.find((delArticle) => delArticle.flagId === parseInt(id, 10));
+  if (!checkFLag) {
+    res.status(404).json({
+      status: 404,
+      message: 'article not found',
+    });
+  } else {
+    const deleteFlag = articles.findIndex((delArticle) => delArticle.articleId === parseInt(id, 10));
+    if (deleteFlag !== -1) {
+      articles.splice(deleteFlag, 1);
+      res.status(200).json({
+        status: 200,
+        message: 'Flagged article successfully Deleted',
+      });
+    } else {
+      res.status(404).json({
+        status: 404,
+        message: 'article does no longer visible to the users',
+      });
+    }
+  }
+};
 
 
 export default {
-  viewFlags,flagArticle
+  viewFlags,flagArticle,deleteFlagArticle
 };

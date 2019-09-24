@@ -6,5 +6,6 @@ import flagController from '../controllers/flagController';
 const router = express.Router();
 router.get('/flags', userToken, adminToken, flagController.viewFlags);
 router.post('/flags/:id', userToken, flagController.flagArticle);
+router.delete('/flags/:id',userToken, adminToken, flagController.deleteFlagArticle);
 
 export default router;
