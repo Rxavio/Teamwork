@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import employee from './routes/employee';
 import article from './routes/article';
+import flag from './routes/flag';
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 
 app.use('/api/v1', employee);
 app.use('/api/v1', article);
+app.use('/api/v1', flag);
 
 app.use((req, res, next) => {
   const error = new Error('Method not allowed');
