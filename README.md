@@ -5,20 +5,20 @@ Goal of Application this application is to facilitate more interaction between c
 
 ## Required Features
 
-1. Employees can create their own user account.
-2. Employees can sign in.
-3. Employees can write and/or share articles with colleagues on topics of interest to them.
-4. Employees can edit their articles.
-5. Employees can delete their articles.
-6. Employees can comment on other colleagues' article post.
-7. Employees can view all articles showing the most recently posted articles first.
-8. Employees can view a specific article.
+1. Employees can create their own user account
+2. Employees can sign in
+3. Employees can write and/or share articles with colleagues on topics of interest to them
+4. Employees can edit their articles
+5. Employees can delete their articles
+6. Employees can comment on other colleagues' article post
+7. Employees can view all articles showing the most recently posted articles first
+8. Employees can view a specific article
 
 ## Optional Features
 
-- Employees can view all articles that belong to a category.
-- Employees can flag a comment, or article as inappropriate.
-- Admin can delete a comment, or article flagged as inappropriate.
+- Employees can view all articles that belong to a category
+- Employees can flag a comment, or article as inappropriate
+- Admin can delete a comment, or article flagged as inappropriate
 
 
 # **Technonlogies**
@@ -67,19 +67,19 @@ Goal of Application this application is to facilitate more interaction between c
 
 `- DELETE /articles/<articleId> - Employees can delete their articles`
 
-`- POST /articles/<articleId>/comments - Employees can comment on other colleagues' article post.`
+`- POST /articles/<articleId>/comments - Employees can comment on other colleagues' article post`
 
-`- GET /feeds - Employees can view all articles, showing the most recently posted articles first.`
+`- GET /feeds - Employees can view all articles, showing the most recently posted articles first`
 
-`- GET /articles/<articleId> - Employees can view a specific article.`
+`- GET /articles/<articleId> - Employees can view a specific article`
 
-`- GET /articles?articles=<:desired-category> - Employees can view all articles that belong to a category.`
+`- GET /articles?articles=<:desired-category> - Employees can view all articles that belong to a category`
 
-`- POST /articles/flag/<articleId> - Employees can flag an article as inappropriate.`
+`- POST /articles/flag/<articleId> - Employees can flag an article as inappropriate`
 
 `- GET /flags - Admin can view all flags`
 
-`- DELETE /articles/<articleId> - Admin can delete an article flagged as inappropriate.`
+`- DELETE /articles/<articleId> - Admin can delete an article flagged as inappropriate`
 
 
 ### Links
