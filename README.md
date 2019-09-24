@@ -16,11 +16,9 @@ Goal of Application this application is to facilitate more interaction between c
 
 ## Optional Features
 
-- Employees can view all articles that belong to a category (tag).
+- Employees can view all articles that belong to a category.
 - Employees can flag a comment, or article as inappropriate.
 - Admin can delete a comment, or article flagged as inappropriate.
-
-
 
 
 # **Technonlogies**
@@ -74,7 +72,8 @@ Goal of Application this application is to facilitate more interaction between c
 `- GET /feeds - Employees can view all articles, showing the most recently posted articles first.`
 
 `- GET /articles/<articleId> - Employees can view a specific article.`
-`- GET /articles?articles=<:desired-category> - Employees can view all articles that belong to a category (tag).`
+
+`- GET /articles?articles=<:desired-category> - Employees can view all articles that belong to a category.`
 
 `- POST /articles/flag/<articleId> - Employees can flag an article as inappropriate.`
 
