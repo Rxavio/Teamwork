@@ -1,6 +1,6 @@
-/* eslint-disable max-len */
 /* eslint-disable eqeqeq */
 /* eslint-disable consistent-return */
+/* eslint-disable max-len */
 import moment from 'moment';
 import _ from 'lodash';
 import articles from '../models/article-data';
@@ -266,6 +266,7 @@ const specificArticle = async (req, res) => {
     }
   }
 };
+
 const tagArticle = async (req, res) => {
   const { article } = req.query;
   const filterArticles = articles.filter((item) => item.article.includes(`${article.trim()}`));
@@ -281,6 +282,7 @@ const tagArticle = async (req, res) => {
     });
   }
 };
+
 export default {
-  createArticle, deleteArticle, viewArticles, editArticles, commentOnArticle, specificArticle,tagArticle
+  createArticle, deleteArticle, viewArticles, editArticles, commentOnArticle, specificArticle, tagArticle,
 };

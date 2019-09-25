@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable consistent-return */
+/* eslint-disable max-len */
 import flags from '../models/flag-data';
 import employees from '../models/employee-data';
 import articles from '../models/article-data';
@@ -33,7 +36,7 @@ const flagArticle = async (req, res) => {
   } else {
     const { id: userId } = req.user;
     const checkUser = employees.find((user) => user.id === userId);
-    if (!checkUser) return res.status(401).send('you must provide your credentails');
+    if (!checkUser) return res.status(401).send('Oops,you must provide your credentails');
     const { firstName, lastName } = checkUser;
     const { id } = req.params;
     const findArticle = articles.find((checkArticle) => checkArticle.articleId == id);
@@ -88,7 +91,6 @@ const deleteFlagArticle = async (req, res) => {
   }
 };
 
-
 export default {
-  viewFlags,flagArticle,deleteFlagArticle
+  viewFlags, flagArticle, deleteFlagArticle,
 };
