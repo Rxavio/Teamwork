@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import employees from '../models/employee-data';
@@ -5,7 +6,6 @@ import validateUp from '../middlewares/validateSignup';
 import validateIn from '../middlewares/validateSignin';
 import response from '../helpers/response';
 // sign up
-// eslint-disable-next-line consistent-return
 const signUp = async (req, res) => {
   const { error } = validateUp(req.body);
   if (error) {
