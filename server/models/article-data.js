@@ -24,6 +24,14 @@ const articles = [
     title: 'It’s Easy to Keep Track of Projects',
     article: '  Online collaboration tools have a variety of project tracking capabilities that make it easy for team members to see the evolution of a project from day one. From tracking who made the latest changes to a document, to how the document was before the changes, to tagging a colleague to review the document, it’s never been easier to manage a project. Online collaboration tools remove the need to use e-mail as the primary means of communicating with team members, so the need to search an inbox for a lost document, for example, is completely removed.',
   },
+  {
+    articleId: 4,
+    authorId: 2,
+    authorName: 'Chris Martin',
+    createdOn: '2019-09-18T20:21:13+02:00',
+    title: 'football is the game',
+    article: 'football is the game for all, children,youths,mothers,fathers,retired old man and women etc',
+  },
 
 ];
 
