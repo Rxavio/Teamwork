@@ -9,7 +9,7 @@ chai.should();
 
 
 describe('POST/signup ', () => {
-  it('User successfully created, it should return 201', (done) => {
+  it('User successfully created, it should return(201)', (done) => {
     const user = {
       firstName: 'kali',
       lastName: 'yves',
@@ -33,7 +33,7 @@ describe('POST/signup ', () => {
   });
 
 
-  it('should not register an already registered user', (done) => {
+  it('should not register an already registered user(409)', (done) => {
     const user = {
       firstName: 'chris',
       lastName: 'martin',
@@ -55,7 +55,7 @@ describe('POST/signup ', () => {
       });
   });
 
-  it(' it should check if inputs required are correct', (done) => {
+  it(' it should check if inputs required are correct(422)', (done) => {
     const user = {
       firstName: 'chris',
       lastName: 'martin',
@@ -76,7 +76,7 @@ describe('POST/signup ', () => {
         done();
       });
   });
-  it(' it should check an empty field', (done) => {
+  it(' it should check an empty field(422)', (done) => {
     const user = {
       firstName: 'chris',
       lastName: 'martin',
@@ -98,7 +98,7 @@ describe('POST/signup ', () => {
       });
   });
 
-  it('should return method not allowed for a wrong method', (done) => {
+  it('should return method not allowed for a wrong method(405)', (done) => {
     const user = {
       firstName: 'chris',
       lastName: 'martin',
