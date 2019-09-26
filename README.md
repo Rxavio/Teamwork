@@ -86,10 +86,10 @@ Goal of Application this application is to facilitate more interaction between c
 
 ### USER SIGNUP & SIGNIN ENDPOINTS : `/auth/`
 
-HTTP METHOD | ENDPOINT | AUTHENTICATED | DESCRIPTION
------------|----------|--------------|------
-POST | `/signup` | `False` | Employees can create their own user account
-POST | `/signin` | `False` | Employees can sign in
+HTTP METHOD | ENDPOINT | DESCRIPTION
+------------|---------------|-----------------------------------------
+POST | `/signup`  | Employees can create their own user account
+POST | `/signin`  | Employees can sign in
 
 
 
