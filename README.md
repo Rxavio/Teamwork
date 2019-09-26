@@ -57,26 +57,33 @@ Goal of Application this application is to facilitate more interaction between c
 ## API ENDPOINTS
 ### *BASEURL : `/api/v1/`*
 
-### USER SIGNUP & SIGNIN ENDPOINTS : `/auth/`
+### USER SIGNUP & SIGNIN ENDPOINTS 
 
 HTTP METHOD | ENDPOINT | DESCRIPTION
 ------------|---------------|-----------------------------------------
-POST | `/signup`  | Employees can create their own user account
-POST | `/signin`  | Employees can sign in
+POST | `/auth/signup`  | Employees can create their own user account
+POST | `/auth/signin`  | Employees can sign in
 
 ### ARTICLE ENDPOINTS 
 
 HTTP METHOD | ENDPOINT | DESCRIPTION
 ------------|---------------|-----------------------------------------
-POST | `/articles` | Employees can write and/or share articles
+POST | `/article` | Employees can write and/or share articles
 PATCH | `/articles/<articleId>`| Employees can edit their articles
 DELETE | `/articles/<articleId>`| Employees can delete their articles
 POST | `/articles/<articleId>/comments`| Employees can comment on other colleagues' article post
 GET | `/feeds`| Employees can view all articles, showing the most recently posted articles first
 GET | `/articles/<articleId>`|  Employees can view a specific article
-GET | `/articles?article=<:filter anything>`|  Employees can view all articles that belong to a category
+GET | `/articles?article=<:filter>`|  Employees can view all articles that belong to a category
 
 
+### FLAG ENDPOINTS 
+
+HTTP METHOD | ENDPOINT | DESCRIPTION
+------------|---------------|-----------------------------------------
+POST | `/flag/<articleId>` | Employees can flag an article as inappropriate
+GET | `/flags`| Admin can view all flags
+DELETE | `/flag/<articleId>`| Admin can delete an article flagged as inappropriate
 
 
 ### Links
@@ -92,8 +99,7 @@ https://www.pivotaltracker.com/n/projects/2395950
 
 
 
-
-# **Author**
+## Author
 Xavier Rucahobatinya
 
 
