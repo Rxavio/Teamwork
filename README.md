@@ -54,33 +54,6 @@ Goal of Application this application is to facilitate more interaction between c
 
      - npm start
 
-
-## **API endpoints**
-
-`- POST /auth/signup - Employees can create their own user account`
-
-`- POST /auth/signin - Employees can sign in`
-
-`- POST /articles - Employees can write and/or share articles`
-
-`- PATCH /articles/<articleId> - Employees can edit their articles`
-
-`- DELETE /articles/<articleId> - Employees can delete their articles`
-
-`- POST /articles/<articleId>/comments - Employees can comment on other colleagues' article post`
-
-`- GET /feeds - Employees can view all articles, showing the most recently posted articles first`
-
-`- GET /articles/<articleId> - Employees can view a specific article`
-
-`- GET /articles?articles=<:desired-category> - Employees can view all articles that belong to a category`
-
-`- POST /articles/flag/<articleId> - Employees can flag an article as inappropriate`
-
-`- GET /flags - Admin can view all flags`
-
-`- DELETE /articles/<articleId> - Admin can delete an article flagged as inappropriate`
-
 ## API ENDPOINTS
 ### *BASEURL : `/api/v1/`*
 
@@ -90,6 +63,19 @@ HTTP METHOD | ENDPOINT | DESCRIPTION
 ------------|---------------|-----------------------------------------
 POST | `/signup`  | Employees can create their own user account
 POST | `/signin`  | Employees can sign in
+
+### ARTICLE ENDPOINTS 
+
+HTTP METHOD | ENDPOINT | DESCRIPTION
+------------|---------------|-----------------------------------------
+POST | `/articles` | Employees can write and/or share articles
+PATCH | `/articles/<articleId>`| Employees can edit their articles
+DELETE | `/articles/<articleId>`| Employees can delete their articles
+POST | `/articles/<articleId>/comments`| Employees can comment on other colleagues' article post
+GET | `/feeds`| Employees can view all articles, showing the most recently posted articles first
+GET | `/articles/<articleId>`|  Employees can view a specific article
+GET | `/articles?article=<:filter anything>`|  Employees can view all articles that belong to a category
+
 
 
 
