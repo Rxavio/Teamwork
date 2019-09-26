@@ -81,6 +81,17 @@ Goal of Application this application is to facilitate more interaction between c
 
 `- DELETE /articles/<articleId> - Admin can delete an article flagged as inappropriate`
 
+## API ENDPOINTS
+### *BASEURL : `/api/v1/`*
+
+### USER SIGNUP & SIGNIN ENDPOINTS : `/auth/`
+
+HTTP METHOD | ENDPOINT | AUTHENTICATED | DESCRIPTION
+-----------|----------|--------------|------
+POST | `/signup` | `False` | Employees can create their own user account
+POST | `/signin` | `False` | Employees can sign in
+
+
 
 ### Links
 
