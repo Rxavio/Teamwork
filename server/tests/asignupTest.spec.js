@@ -98,7 +98,7 @@ describe('POST/signup ', () => {
       });
   });
 
-  it('should return method not allowed for a wrong method(405)', (done) => {
+  it('should return method not allowed for a wrong method(404)', (done) => {
     const user = {
       firstName: 'chris',
       lastName: 'martin',
@@ -115,7 +115,7 @@ describe('POST/signup ', () => {
       .delete('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
-        expect(res.statusCode).to.equal(405);
+        expect(res.statusCode).to.equal(404);
         done();
       });
   });
