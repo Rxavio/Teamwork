@@ -22,7 +22,7 @@ app.use('/api/v1', article);
 app.use('/api/v1', flag);
 
 app.use('*', (req, res) => {
-  response.response(res, 404, 'error', 'Wrong data source', true);
+  response.response(res, 404, 'error', 'Wrong request', true);
 });
 
 app.listen(port, () => {

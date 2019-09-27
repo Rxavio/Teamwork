@@ -98,7 +98,7 @@ describe('POST/signup ', () => {
       });
   });
 
-  it('should return method not allowed for a wrong method(404)', (done) => {
+  it('should return wrong request(404)', (done) => {
     const user = {
       firstName: 'chris',
       lastName: 'martin',
