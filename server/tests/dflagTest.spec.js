@@ -215,4 +215,27 @@ describe('Delete/ flagged articles ', () => {
         done();
       });
   });
+  it('It should return Access Denied,Only Admin Allowed(403) ', (done) => {
+    const user = {
+      id: 2,
+      firstName: 'chris',
+      lastName: 'martin',
+      email: 'martin@gmail.com',
+      password: '123456',
+      gender: 'male',
+      jobRole: 'developer',
+      department: 'SE',
+      address: 'kigali',
+      isAdmin: false,
+    };
+    const token = jwt.sign(user, process.env.JWT_KEY);
+    chai
+      .request(app)
+      .delete('/api/v1/flags/1')
+      .set('user_token', token)
+      .end((err, res) => {
+        expect(res.status).to.equal(403);
+        done();
+      });
+  });
 });
