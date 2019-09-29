@@ -6,7 +6,6 @@ import app from '../index';
 chai.use(chaiHttp);
 chai.should();
 
-
 describe('POST/signin user ', () => {
   it('it should return 401 for Invalid user email', (done) => {
     const user = {

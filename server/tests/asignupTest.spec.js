@@ -98,7 +98,7 @@ describe('POST/signup ', () => {
       });
   });
 
-  it('should return wrong request(404)', (done) => {
+  it('should return a wrong  request(404)', (done) => {
     const user = {
       firstName: 'chris',
       lastName: 'martin',

@@ -336,16 +336,16 @@ describe('Get/ all articles', () => {
       address: 'kigali',
       isAdmin: false,
     };
-    const newArticle = {
+    /* const newArticle = {
       title: 'The Benefits of Online Collaboration Tools',
       article: 'Teamwork is one of the most important aspects of the modern workplace.',
-    };
+    }; */
     const token = jwt.sign(user, process.env.JWT_KEY);
     chai
       .request(app)
       .get('/api/v1/feeds')
       .set('user_token', token)
-      .send(newArticle)
+      // .send(newArticle)
       .end((err, res) => {
         expect(res.status).to.equal(200);
         done();
@@ -364,16 +364,16 @@ describe('Get/ all articles', () => {
       address: 'Kigali',
       isAdmin: true,
     };
-    const newArticle = {
+    /* const newArticle = {
       title: 'The Benefits of Online Collaboration Tools',
       article: 'Teamwork is one of the most important aspects of the modern workplace.',
-    };
+    }; */
     const token = jwt.sign(user, process.env.JWT_KEY);
     chai
       .request(app)
       .get('/api/v1/feeds')
       .set('user_token', token)
-      .send(newArticle)
+      // .send(newArticle)
       .end((err, res) => {
         expect(res.status).to.equal(401);
         done();
@@ -538,16 +538,16 @@ describe('Delete/ user delete it own article ', () => {
       address: 'Kigali',
       isAdmin: true,
     };
-    const newArticle = {
+    /* const newArticle = {
       title: 'The Benefits of Online Collaboration Tools',
       article: 'Teamwork is one of the most important aspects of the modern workplace.',
-    };
+    }; */
     const token = jwt.sign(user, process.env.JWT_KEY);
     chai
       .request(app)
       .delete('/api/v1/articles/2')
       .set('user_token', token)
-      .send(newArticle)
+      // .send(newArticle)
       .end((err, res) => {
         expect(res.status).to.equal(401);
         done();
