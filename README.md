@@ -1,7 +1,7 @@
 # Teamwork
 [![Build Status](https://travis-ci.org/xavioo/Teamwork.svg?branch=develop)](https://travis-ci.org/xavioo/Teamwork) 
 [![Coverage Status](https://coveralls.io/repos/github/xavioo/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/xavioo/Teamwork?branch=develop)
- [![Maintainability](https://api.codeclimate.com/v1/badges/2c2a16a599483ff70e2d/maintainability)](https://codeclimate.com/github/xavioo/Teamwork/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2c2a16a599483ff70e2d/maintainability)](https://codeclimate.com/github/xavioo/Teamwork/maintainability)
 
 
 Teamwork is an internal social network for organizations’ employees.
@@ -10,7 +10,7 @@ Goal of Application this application is to facilitate more interaction between c
 ## Required Features
 
 1. Employees can create their own user account
-2. Employees can sign in.
+2. Employees can sign in
 3. Employees can write and/or share articles with colleagues on topics of interest to them
 4. Employees can edit their articles
 5. Employees can delete their articles
