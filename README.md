@@ -10,7 +10,7 @@ Goal of Application this application is to facilitate more interaction between c
 ## Required Features
 
 1. Employees can create their own user account
-2. Employees can sign in
+2. Employees can sign in.
 3. Employees can write and/or share articles with colleagues on topics of interest to them
 4. Employees can edit their articles
 5. Employees can delete their articles
