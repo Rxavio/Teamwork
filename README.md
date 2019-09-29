@@ -1,6 +1,6 @@
 # Teamwork
-[![Build Status](https://travis-ci.org/xavioo/Teamwork.svg?branch=develop)](https://travis-ci.org/xavioo/Teamwork) 
-[![Coverage Status](https://coveralls.io/repos/github/xavioo/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/xavioo/Teamwork?branch=develop)
+[![Build Status](https://travis-ci.org/xavioo/Teamwork.svg?branch=develop)](https://travis-ci.org/xavioo/Teamwork)
+[![Coverage Status](https://coveralls.io/repos/github/xavioo/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/xavioo/Teamwork?branch=develop) 
 [![Maintainability](https://api.codeclimate.com/v1/badges/2c2a16a599483ff70e2d/maintainability)](https://codeclimate.com/github/xavioo/Teamwork/maintainability)
 
 
