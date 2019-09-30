@@ -1,5 +1,4 @@
 # Teamwork
-
 Teamwork is an internal social network for organizations’ employees.
 Goal of Application this application is to facilitate more interaction between colleagues and facilitate team bonding.
 
