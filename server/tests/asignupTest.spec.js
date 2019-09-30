@@ -85,7 +85,7 @@ describe('POST/signup ', () => {
       gender: 'male',
       jobRole: 'developer',
       department: '',
-      address: 'kigali',
+      address: 'Kigali',
     };
 
     chai
