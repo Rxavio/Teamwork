@@ -21,11 +21,13 @@
           <div class="line"></div>
         </div>
   
-         <div class="logo">
-        <img src="../assets/images/team.png"></a>
-        </div>
+        <div class="logo">
+          <a href="./home.html"> <img src="../assets/images/team.png"></a>
+           </div>
+   
 
         <ul class="nav-links">
+            <li> <a class="active" href="./reason.html">Flag article</a></li>
           <li><a href="./edit-delete-article.html">My Articles</a></li>
           <li><a href="./view-articles.html">Shared Articles</a></li>
           <li><a href="./login.html">Logout</a><li>
@@ -35,10 +37,9 @@
 
         <div class="flag-article-page">
             <div class="flag-form">
-                <form action="#" id="comment-action">
-            
+              <form class="flag-action" action="./comment-article.html">	
                 <h3>Write the reason why you choose to flag that article</h3> <br>
-            <textarea name="flag" rows="10" cols="40" placeholder="Write the reason of flagging that article..."></textarea>
+            <textarea name="flag" required="" minlength="25"  rows="10" cols="40" placeholder="Write the reason of flagging that article..."></textarea>
             <button>Flag </button>
                 </form>
     </div>

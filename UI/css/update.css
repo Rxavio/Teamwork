@@ -37,6 +37,7 @@
   border: 1px solid #e1e1e1;
   outline: 0;
   border-radius: 10px;
+  font-size: 18px;
  
 }
 .update-form textarea{
@@ -49,6 +50,7 @@
   border: 1px solid #e1e1e1;
   outline: 0;
   border-radius: 10px; 
+  font-size: 18px;
 }
 .update-form button{
   text-transform: uppercase;
