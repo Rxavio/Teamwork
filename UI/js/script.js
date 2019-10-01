@@ -8,11 +8,4 @@ hamburger.addEventListener('click', () => {
     link.classList.toggle('fade');
   });
 });
-/*
-function updateFunction() {
-  location.replace('edit-delete-article.html');
-}
-function postFunction() {
-  location.replace('view-articles.html');
-}
-*/
+
