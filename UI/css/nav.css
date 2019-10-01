@@ -17,7 +17,7 @@ box-sizing: border-box;
 }
 body {
 font-family: 'Crimson Text';
-font-size: 18px;
+font-size: 20px;
 }
 
 nav {
@@ -55,6 +55,9 @@ font-size: 20px;
 }
 .nav-links li a:hover{
 opacity: 0.5;
+}
+.nav-links .active{
+  color:var(--primaryColor);
 }
 
 @media screen and (max-width: 700px) {
