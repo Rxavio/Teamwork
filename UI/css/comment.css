@@ -29,6 +29,11 @@
   border: 1px solid #e1e1e1;
   border-radius: 10px;
 }
+.comment-form img{
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+}
 .comment-form input{
   background: var(--mainWhite);
   width: 100%;
@@ -51,8 +56,6 @@
  
 }
 
-
-
 a{
   text-decoration: none;
   color: var(--mainBlack);
@@ -67,15 +70,10 @@ a{
   padding: 12px;
   border: 1px solid #e1e1e1;
   outline: 0; 
-  
- 
 }
-
-
 .info-card h4 {
   text-transform: uppercase;
   color: var(--primaryColor);
-  border-bottom: 1px solid #e1e1e1;
   letter-spacing: var(--mainSpacing); 
  
 
@@ -88,7 +86,7 @@ a{
 .info-card .author {
   margin-top:10px;
   color: var(--color-secondary);
-  margin-left: 75%;
+  margin-left: 65%;
   margin-bottom: 0px;
   letter-spacing: var(--mainSpacing); 
 }
@@ -159,15 +157,16 @@ color: var(--primaryColor);
 .comment-posted p :hover{
   opacity: 1; 
 }
-.info-card img{
+.info-card img.icon{
   margin-left: 20px;
-  width:14px;
-  height: 14px;
+  width:16px;
+  height: 16px;
   opacity: 0.6;
   float: left;
   margin-top: -13px;
 }
-.info-card img:hover{
+
+.info-card img .icon:hover{
   opacity: 1;
 }
 @media only screen and (min-width: 300px) and (max-width: 1200px){
@@ -204,7 +203,7 @@ color: var(--primaryColor);
   .comment{
     width: auto;
   }
-  .info-card img{
+  .info-card img.icon{
     height: 20px;
    width: 20px;
    padding-top: 5px;
