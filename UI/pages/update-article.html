@@ -20,27 +20,26 @@
               <div class="line"></div>
               <div class="line"></div>
             </div>
-      
-             <div class="logo">
-            <img src="../assets/images/team.png">
-            </div>
-    
+
+            <div class="logo">
+              <a href="./home.html"> <img src="../assets/images/team.png"></a>
+               </div>
+       
             <ul class="nav-links">
-              <li><a href="./edit-delete-article.html">My Articles</a></li>
+                <li> <a class="active" href="./update-article.html">My articles</a></li>
               <li><a href="./view-articles.html">Shared Articles</a></li>
               <li><a href="./login.html">Logout</a><li>
             </ul>
           </nav>
-
-					
     <!-- update an rticles-->
-
         <div class="update-article-page">
             <div class="update-form">
-             <form action="#" id="update-action">
+              <form class="update-action" action="./view-articles.html">	
             <h3>Update your article</h3><br>
-            <input type="text"value="The Benefits of Online Collaboration Tools" id="title">
-            <textarea name="article" rows="10" cols="50">
+            <input type="text"value="The Benefits of Online Collaboration Tools" id="title"  required="" minlength="6">
+            <input type="file" class="width-50" name="image" id="image">
+            <img src="../assets/images/banner.jpg">
+            <textarea name="article" rows="10" cols="50"  required="" minlength="3">
 Teamwork is one of the most important aspects of the modern workplace. However, widespread Internet availability means that members of the team could be just about anywhere in the world. So for teamwork to be effective, it’s important for companies to adopt modern work practices and technologies that help co-workers, wherever they are, share their work in a simple and efficient way. This is where a good online collaboration tool comes in. If you’re contemplating adopting--or proposing the adoption of--online collaboration tools, the list of online collaboration benefits below may help you and your organization make a decision on this useful technology.
             </textarea>
             <button>Update article</button>

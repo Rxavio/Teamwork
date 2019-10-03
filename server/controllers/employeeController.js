@@ -24,6 +24,11 @@ const signUp = async (req, res) => {
       message: 'User Account already Exist.',
     });
   }
+
+  let admin = 'false';
+  if (req.body.email === process.env.Administrator) {
+    admin = 'true';
+  }
   const {
     firstName, lastName, email, password, gender, jobRole, department, address,
   } = req.body;
@@ -38,16 +43,18 @@ const signUp = async (req, res) => {
     jobRole,
     department,
     address,
-    isAdmin: false,
+    isAdmin: admin,
   };
   const salt = await bcrypt.genSalt(10);
   addUser.password = await bcrypt.hash(addUser.password, salt);
   employees.push(addUser);
+  const token = jwt.sign({ id: addUser.id, isAdmin: addUser.isAdmin }, process.env.JWT_KEY);
   if (addUser) {
     const result = {
       firstName, lastName, email, gender, jobRole, department, address,
     };
     return res.status(201).json({
+      user_token: token,
       status: 201,
       message: 'User Created Successfully',
       data: result,

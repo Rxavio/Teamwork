@@ -76,14 +76,16 @@
 @media only screen and (min-width: 300px) and (max-width: 1200px){
     .login-page{
       width:100%;
+      height: auto;
       margin-bottom: 0px;
       padding: 10px;
       margin-top: 15px;
+
     }
     .login-form{
       width: 100%;
       padding: 10px;
-      height: 500px;
+      height: auto;
       width: 100%;
       margin-bottom: 5px
       
@@ -96,6 +98,14 @@
         width: 45px;
         
       }
+      .login-form input{
+        margin: 0 0 10px;
+        padding: 6px;  
+    }
+   
+    .login-form button{
+      padding: 6px;
+  }
       
     
   
