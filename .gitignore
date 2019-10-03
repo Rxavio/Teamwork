@@ -8,3 +8,5 @@ node_modules
 .nyc_output
 #Ignoring coverage folder
 coverage
+#Ignoring .github folder
+.github

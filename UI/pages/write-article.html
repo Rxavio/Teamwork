@@ -22,10 +22,11 @@
         </div>
   
          <div class="logo">
-        <img src="../assets/images/team.png"></a>
+       <a href="./home.html"> <img src="../assets/images/team.png"></a>
         </div>
 
         <ul class="nav-links">
+            <li> <a class="active" href="./write-article.html">New article</a></li>
           <li><a href="./edit-delete-article.html">My Articles</a></li>
           <li><a href="./view-articles.html">Shared Articles</a></li>
           <li><a href="./login.html">Logout</a><li>
@@ -35,13 +36,13 @@
 
         <div class="create-article-page">
             <div class="article-form">
-                <form action="#" id="comment-action">
-            
+              <form class="article-action" action="./view-articles.html">	
                 <h3>Write your article</h3> <br>
-
-            <input type="text"placeholder="Article Title" name="title">
-            <textarea name="article" rows="10" cols="50" placeholder="write your article..."></textarea>
-            <button>share article</button>
+            <input type="text"placeholder="Article Title" name="title" required="" minlength="6" >
+            <label for="photo">Upload an Image</label>
+            <input type="file" class="" name="image" id="image">
+            <textarea name="article" rows="10" cols="50" placeholder="write your article..." required="" minlength="30" ></textarea>
+                <button>share article</button>
                 </form>
     </div>
     </div>

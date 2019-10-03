@@ -25,8 +25,8 @@ const createArticle = async (req, res) => {
   if (isAdmin) {
     response.response(
       res,
-      401,
-      401,
+      403,
+      403,
       'Only users allowed to create an Article',
     );
   } else {
@@ -53,11 +53,10 @@ const createArticle = async (req, res) => {
     };
     articles.push(newArticle);
     if (newArticle) {
-      const result = { createdOn: moment().format(), title, article };
       return res.status(201).json({
         status: 201,
         message: 'article successfully created',
-        data: result,
+        data: newArticle,
       });
     }
   }
@@ -99,14 +98,13 @@ const deleteArticle = async (req, res) => {
 };
 
 const viewArticles = async (req, res) => {
-  const { isAdmin } = req.user;
-  if (isAdmin) {
-    response.response(
-      res,
-      401,
-      401,
-      'Oops,Only users allowed!',
-    );
+  const { id } = req.params;
+  const checkArticle = articles.find((editArticle) => editArticle.id == id);
+  if (!checkArticle) {
+    res.status(404).json({
+      status: 404,
+      message: 'Nothing found',
+    });
   } else {
     const sortArticles = _.sortBy(articles).reverse();
     return res.status(200).json({
@@ -132,13 +130,12 @@ const editArticles = async (req, res) => {
   if (isAdmin) {
     response.response(
       res,
-      401,
-      401,
+      403,
+      403,
       'Only Article Author allowed to edit it!',
     );
   } else {
     const { id } = req.params;
-    const { title, article } = req.body;
     const { id: ownerId } = req.user;
     const upArticle = articles.find((editArticle) => editArticle.articleId == id);
     if (!upArticle) {
@@ -151,8 +148,8 @@ const editArticles = async (req, res) => {
       if (!updateArticle) {
         response.response(
           res,
-          401,
-          401,
+          403,
+          403,
           'Only Article Author allowed to edit it!',
         );
       } else {
@@ -160,11 +157,10 @@ const editArticles = async (req, res) => {
         UpdateData.forEach((data) => {
           updateArticle[data] = req.body[data];
         });
-        const result = { editedOn: moment().format(), title, article };
         res.status(200).json({
           status: 200,
           message: 'article successfully Edited',
-          data: result,
+          data: updateArticle,
         });
       }
     }
@@ -185,8 +181,8 @@ const commentOnArticle = async (req, res) => {
   if (isAdmin) {
     response.response(
       res,
-      401,
-      401,
+      403,
+      403,
       'Only users allowed to comment!',
     );
   } else {
@@ -228,13 +224,12 @@ const specificArticle = async (req, res) => {
   if (isAdmin) {
     response.response(
       res,
-      401,
-      401,
+      403,
+      403,
       'Only users allowed!',
     );
   } else {
     const { id } = req.params;
-
     const existArticle = articles.filter(
       (specfarticles) => specfarticles.articleId === parseInt(id, 10),
     );
@@ -272,8 +267,8 @@ const tagArticle = async (req, res) => {
   if (isAdmin) {
     response.response(
       res,
-      401,
-      401,
+      403,
+      403,
       'Only users allowed!',
     );
   } else {

@@ -35,22 +35,19 @@
 					<div class="create-page">
 
 							<div class="create-form">
-
-                    
+							<form class="login-action" action="./login.html">	
                             <img src="../assets/icons/useravt.JPG">
-							
 							 <h3>Create your own account</h3> <br>
-
-                            <input type="text"placeholder="Firstname" id="firstname">
-							<input type="text" placeholder="Lastname" id="lastname">
-                            <input type="email" placeholder="Email" id="email">
-							<input type="password" placeholder="password" id="password">
-							<select name="gender" id="gender">
+                            <input type="text"placeholder="Firstname" id="firstname" required="">
+							<input type="text" placeholder="Lastname" id="lastname"required="">
+                            <input type="email" placeholder="Email" id="email" required="">
+							<input type="password" placeholder="password" id="password"required="" minlength="6">
+							<select name="gender" id="gender" required="">
 									<option value="">Select gender</option>
 									<option value="male">Male</option>
 									<option value="female">Female</option>
 							</select>
-							<select name="jobrole" id="jobrole">
+							<select name="jobrole" id="jobrole" required="">
 									<option value="">Select JobRole</option>
 									<option value="ceo">CEO</option>
 									<option value="Software developer">Developer</option>
@@ -58,16 +55,12 @@
 									<option value="it">IT</option>
 							</select>
 
-							<input type="text" placeholder="Department" id="department">
-							<input type="text" placeholder="Address" id="address">
-
-							
-
-
-														
+							<input type="text" placeholder="Department" id="department"required="">
+							<input type="text" placeholder="Address" id="address" required="">							
                             <p>Already Registered?<a href="./login.html">&nbsp;&nbsp;&nbsp;<u>Login</u></a></p>
 
-                            <button>sign up</button>
+							<button>sign up</button>
+							</form>
 
 					</div>
 					</div>
