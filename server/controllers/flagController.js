@@ -1,6 +1,5 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable consistent-return */
 /* eslint-disable max-len */
+/* eslint-disable eqeqeq */
 import flags from '../models/flag-data';
 import employees from '../models/employee-data';
 import articles from '../models/article-data';
@@ -29,8 +28,8 @@ const flagArticle = async (req, res) => {
   if (isAdmin) {
     response.response(
       res,
-      401,
-      401,
+      403,
+      403,
       'Only users Allowed!',
     );
   } else {

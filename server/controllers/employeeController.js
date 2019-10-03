@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import employees from '../models/employee-data';
@@ -24,11 +23,6 @@ const signUp = async (req, res) => {
       message: 'User Account already Exist.',
     });
   }
-
-  let admin = 'false';
-  if (req.body.email === process.env.Administrator) {
-    admin = 'true';
-  }
   const {
     firstName, lastName, email, password, gender, jobRole, department, address,
   } = req.body;
@@ -43,7 +37,7 @@ const signUp = async (req, res) => {
     jobRole,
     department,
     address,
-    isAdmin: admin,
+    isAdmin: false,
   };
   const salt = await bcrypt.genSalt(10);
   addUser.password = await bcrypt.hash(addUser.password, salt);
