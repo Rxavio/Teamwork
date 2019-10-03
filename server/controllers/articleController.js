@@ -1,6 +1,5 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable consistent-return */
 /* eslint-disable max-len */
+/* eslint-disable eqeqeq */
 import moment from 'moment';
 import _ from 'lodash';
 import articles from '../models/article-data';
@@ -66,8 +65,8 @@ const deleteArticle = async (req, res) => {
   if (isAdmin) {
     response.response(
       res,
-      401,
-      401,
+      403,
+      403,
       'Only Article Author allowed to delete it!',
     );
   } else {
@@ -88,8 +87,8 @@ const deleteArticle = async (req, res) => {
           message: 'article successfully Deleted',
         });
       } else {
-        res.status(401).json({
-          status: 401,
+        res.status(403).json({
+          status: 403,
           message: 'Only Article Author allowed to delete it!',
         });
       }
@@ -98,20 +97,25 @@ const deleteArticle = async (req, res) => {
 };
 
 const viewArticles = async (req, res) => {
-  const { id } = req.params;
-  const checkArticle = articles.find((editArticle) => editArticle.id == id);
-  if (!checkArticle) {
-    res.status(404).json({
-      status: 404,
-      message: 'Nothing found',
-    });
+  const { isAdmin } = req.user;
+  if (isAdmin) {
+    response.response(
+      res,
+      403,
+      403,
+      'Only users allowed!',
+    );
   } else {
-    const sortArticles = _.sortBy(articles).reverse();
-    return res.status(200).json({
-      status: 200,
-      message: 'success',
-      data: sortArticles,
-    });
+    const { id } = req.params;
+    const checkArticle = articles.find((editArticle) => editArticle.id == id);
+    if (checkArticle) {
+      const sortArticles = _.sortBy(articles).reverse();
+      return res.status(200).json({
+        status: 200,
+        message: 'success',
+        data: sortArticles,
+      });
+    }
   }
 };
 
