@@ -35,7 +35,7 @@ const createArticle = async (req, res) => {
     if (!checkUser) {
       return res.status(401).json({
         status: 401,
-        message: 'Oops,you must provide your credentails',
+        message: 'you must provide your credentails',
       });
     }
     const { id: authorId, firstName, lastName } = checkUser;
