@@ -1,7 +1,5 @@
 # Teamwork
-[![Build Status](https://travis-ci.org/xavioo/Teamwork.svg?branch=develop)](https://travis-ci.org/xavioo/Teamwork)
-[![Coverage Status](https://coveralls.io/repos/github/xavioo/Teamwork/badge.svg)](https://coveralls.io/github/xavioo/Teamwork)
-[![Maintainability](https://api.codeclimate.com/v1/badges/f32ff847608bfa3c3f6c/maintainability)](https://codeclimate.com/github/xavioo/Teamwork/maintainability)
+
 
 Teamwork is an internal social network for organizations’ employees.
 Goal of Application this application is to facilitate more interaction between colleagues and facilitate team bonding.
@@ -93,7 +91,7 @@ DELETE | `/flag/<articleId>`| Admin can delete an article flagged as inappropria
 
 ### 1.Gh-pages
 
-https://xavioo.github.io/Teamwork/UI/index.html
+
 
 
 ### 2.Pivotal Tracker
