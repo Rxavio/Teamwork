@@ -43,7 +43,7 @@ Goal of Application this application is to facilitate more interaction between c
 
 ## **Clone the project**
 
-    - git clone https://github.com/xavioo/Teamwork.git
+    - git clone https://github.com/Rxavio/Teamwork.git
     - cd /Teamwork
     - npm install (to install required dependencies)
   
