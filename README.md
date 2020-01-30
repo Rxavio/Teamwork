@@ -90,6 +90,7 @@ DELETE | `/flag/<articleId>`| Admin can delete an article flagged as inappropria
 ### Links
 
 ### 1.Gh-pages
+https://rxavio.github.io/Teamwork/UI
 
 
 
