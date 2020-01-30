@@ -1,5 +1,7 @@
 # Teamwork
 
+[![Coverage Status](https://coveralls.io/repos/github/Rxavio/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/Rxavio/Teamwork?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/77a5557faf96866a8a09/maintainability)](https://codeclimate.com/github/Rxavio/Teamwork/maintainability)
+
 
 Teamwork is an internal social network for organizations’ employees.
 Goal of Application this application is to facilitate more interaction between colleagues and facilitate team bonding.
