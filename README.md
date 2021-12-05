@@ -2,7 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/Rxavio/Teamwork/badge.svg?branch=develop)](https://coveralls.io/github/Rxavio/Teamwork?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/77a5557faf96866a8a09/maintainability)](https://codeclimate.com/github/Rxavio/Teamwork/maintainability)
 
-[![Build Status](https://travis-ci.org/Rxavio/Teamwork.svg?branch=develop)](https://travis-ci.org/Rxavio/Teamwork)
+<!-- [![Build Status](https://travis-ci.org/Rxavio/Teamwork.svg?branch=develop)](https://travis-ci.org/Rxavio/Teamwork) -->
 
 
 Teamwork is an internal social network for organizations’ employees.
